@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block title %}SiteName{% endblock %}</title>
+	<title>{% block title %}R.T.S{% endblock %}</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
 
 	{% load static %}
 
@@ -22,7 +24,23 @@
 </head>
 <body style="background: #f0f0f0">
 	<header>
-		<nav class="navbar fixed-top navbar-light col-12 col-lx-8 mx-auto">
+		<nav class="navbar navbar-expand-xl navbar-light fixed-top col-12 col-xl-8 mx-auto" style="background: #fff">
+			<a class="navbar-brand" href="#">
+				<img src="https://cdn140.picsart.com/262561163006212.png" width="120" height="40" class="d-inline-block align-top" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+			    <a class="nav-item nav-link" href="#">Аренда оборудования</a>
+			    <a class="nav-item nav-link" href="#">Портфолио</a>
+			    <a class="nav-item nav-link" href="#">Отзывы</a>
+		    	</div>
+		    	<a class="btn btn-outline-success ml-auto" href="#">Разместить заказ</a>
+			</div>
+		</nav>
+		<!--<nav class="navbar fixed-top navbar-light col-8 col-lx-8 mx-auto">
 			<a class="navbar-brand" href="/">
 		    	<img src="https://cdn140.picsart.com/262561163006212.png" width="120" height="40" class="d-inline-block align-top" alt="">
 			</a>
@@ -37,26 +55,25 @@
 				    <a class="nav-link" href="#">Отзывы</a>
 				</li>
 			</ul>
-			<a class="btn btn-outline-success" href="#">Разместить заказ</a>
-		</nav>
+		</nav>-->
 	</header>
 	<div id="content">
 		{% block content %}{% endblock %}
 	</div>
 	<footer>
-		<div class="container-fluid" style="background: #1d1919; color: white">
+		<div class="container-fluid" style="background: #1d1919; color: white;">
 			<div class="row">
-				<div class="col-11 col-xl-8 mx-auto mt-4 mb-5">
+				<div class="col-12 col-sm-11 col-xl-8 mx-auto mt-4 mb-5">
 					<div class="row">
-						<div class="col-6 col-xl-3">
+						<div class="col-12 col-xl-3">
 							<h3>По всем вопросам</h3>
 							<p>Тел. +7 945 432 88 32<br>Еmail. mskzn@gmail.com</p>
 						</div>
-						<div class="col-6 col-xl-3">
+						<div class="col-12 col-xl-3">
 							<h3>Технический отдел</h3>
 							<p>Тел. +7 945 432 88 32<br>Еmail. mskzn@gmail.com</p>
 						</div>
-						<div class="col-6 col-xl-3">
+						<div class="col-12 col-xl-3">
 							<h3>Бухгалтерия</h3>
 							<p>Тел. +7 945 432 88 32<br>Еmail. mskzn@gmail.com</p>
 						</div>
@@ -68,7 +85,7 @@
 				</div>
 			</div>
 			<div class="row" style="background: #000">
-				<div class="col-11 col-xl-8 mx-auto my-3">
+				<div class="col-12 col-xl-8 mx-auto my-3">
 					<div class="row">
 						<div class="col-12">
 							<p style="color: white">Сайт был сделан Авхадиевым Амиром</p>
