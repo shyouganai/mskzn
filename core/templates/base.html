@@ -91,7 +91,10 @@
 		          		<div class="form-group" ng-show="sendRequestForm.name.$valid">
 		          			<label for="id_type" class="col-form-label">Тип заказа:</label>
 		          			<select class="form-control" id="id_type" name="type" ng-model="type" required>
-		          				<option>AAA</option>
+		          				<option>Звуковое оборудование</option>
+		          				<option>Световое оборудование</option>
+		          				<option>Мультимедийное оборудование</option>
+		          				<option>Конструкции сцены</option>
 		          			</select>
 		          		</div>
 		          		<div class="form-group" ng-show="sendRequestForm.type.$valid">
@@ -99,7 +102,7 @@
 		            		<input type="text" class="form-control" id="id_tel" name="tel" ng-model="tel" required>
 		          		</div>
 		          		<div class="form-group">
-		          			<button type="submit" class="btn btn-primary" id="id_send" name="send" ng-disabled="sendRequestForm.name.$invalid || sendRequestForm.tel.$invalid || sendRequestForm.type.$invalid">Отправить</button>
+		          			<button type="submit" class="btn btn-success" id="id_send" name="send" ng-disabled="sendRequestForm.name.$invalid || sendRequestForm.tel.$invalid || sendRequestForm.type.$invalid">Отправить</button>
 		          		</div>
 		        	</form>
 		      	</div>
