@@ -13,7 +13,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,300,700&subset=latin,cyrillic-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 	{% block styles %}{% endblock %}
 
 	<!----Scripts---->
@@ -22,7 +22,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	{% block scripts %}{% endblock %}
 </head>
-<body style="background: #f0f0f0">
+<body>
 	<header>
 		<nav class="navbar navbar-expand-xl navbar-light fixed-top col-12 col-xl-9 mx-auto" style="background: #fff">
 			<a class="navbar-brand" href="#">
