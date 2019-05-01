@@ -24,11 +24,11 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-xl navbar-light fixed-top col-12 col-xl-9 mx-auto" style="background: #fff">
+		<nav class="navbar navbar-expand-xl navbar-light fixed-top col-12 col-xl-9 mx-auto">
 			<a class="navbar-brand" href="#">
 				<img src="https://cdn140.picsart.com/262561163006212.png" width="120" height="40" class="d-inline-block align-top" alt="">
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onclick="change()">
 		    	<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -40,22 +40,6 @@
 		    	<a class="btn btn-outline-success ml-auto" href="#">Разместить заказ</a>
 			</div>
 		</nav>
-		<!--<nav class="navbar fixed-top navbar-light col-8 col-lx-8 mx-auto">
-			<a class="navbar-brand" href="/">
-		    	<img src="https://cdn140.picsart.com/262561163006212.png" width="120" height="40" class="d-inline-block align-top" alt="">
-			</a>
-			<ul class="nav mr-auto">
-				<li class="nav-item">
-				    <a class="nav-link active" href="#">Аренда оборудования</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" href="#">Портфолио</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" href="#">Отзывы</a>
-				</li>
-			</ul>
-		</nav>-->
 	</header>
 	<div id="content">
 		{% block content %}{% endblock %}
@@ -95,5 +79,15 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript">
+		function change() {
+			document.getElementsByClassName("navbar")[0].style.background = "white";
+		}
+		window.addEventListener("scroll", function(event) {
+			if (this.scrollY > 300) {
+			} else {
+			}
+		});
+	</script>
 </body>
 </html>
