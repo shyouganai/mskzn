@@ -73,22 +73,22 @@
 			</div>
 		</div>
 	</footer>
-	<div ng-app class="modal fade" id="sendRequestModal" tabindex="-1" role="dialog" aria-labelledby="sendRequestModal" aria-hidden="true">
+	<div class="modal fade" id="sendRequestModal" tabindex="-1" role="dialog" aria-labelledby="sendRequestModal" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		    <div class="modal-content">
 			    <div class="modal-header">
-		    	    <h5 class="modal-title" id="exampleModalLabel">Новый заказ</h5>
+		    	    <h5 class="modal-title" id="exampleModalLabel">Ваш заказ</h5>
 		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          		<span aria-hidden="true">&times;</span>
 		        	</button>
 		      	</div>
 		      	<div class="modal-body">
-		        	<form name="sendRequestForm">
-		          		<div class="form-group">
+		        	<form ng-app="sendRequestApp" ng-controller="sendRequestCtrl" name="sendRequestForm">
+		          		<div class="form-group" ng-show="!isSend">
 		            		<label for="id_name" class="col-form-label">Ваше имя:</label>
 		            		<input type="text" class="form-control" id="id_name" name="name" ng-model="name" required>
 		          		</div>
-		          		<div class="form-group" ng-show="sendRequestForm.name.$valid">
+		          		<div class="form-group" ng-show="sendRequestForm.name.$valid && !isSend">
 		          			<label for="id_type" class="col-form-label">Тип заказа:</label>
 		          			<select class="form-control" id="id_type" name="type" ng-model="type" required>
 		          				<option>Звуковое оборудование</option>
@@ -97,12 +97,16 @@
 		          				<option>Конструкции сцены</option>
 		          			</select>
 		          		</div>
-		          		<div class="form-group" ng-show="sendRequestForm.type.$valid">
+		          		<div class="form-group" ng-show="sendRequestForm.type.$valid && !isSend">
 		            		<label for="id_tel" class="col-form-label">Ваш телефон:</label>
 		            		<input type="text" class="form-control" id="id_tel" name="tel" ng-model="tel" required>
 		          		</div>
-		          		<div class="form-group">
-		          			<button type="submit" class="btn btn-success" id="id_send" name="send" ng-disabled="sendRequestForm.name.$invalid || sendRequestForm.tel.$invalid || sendRequestForm.type.$invalid">Отправить</button>
+		          		<div class="form-group" ng-show="!isSend">
+		          			<button type="submit" class="btn btn-success" id="id_send" name="send" ng-disabled="sendRequestForm.name.$invalid || sendRequestForm.tel.$invalid || sendRequestForm.type.$invalid" ng-click="send()">Отправить</button>
+		          		</div>
+		          		<div class="form-group" ng-show="isSend">
+		          			<h2>Ваш заказан отправлен нашему директору</h2>
+		          			<p style="color: gray">Он вам сейчас перезвонит. Подождите.</p>
 		          		</div>
 		        	</form>
 		      	</div>
@@ -115,8 +119,19 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 
+	<script type="text/javascript">
+		var app = angular.module("sendRequestApp", []);
+
+		app.controller("sendRequestCtrl", function($scope) {
+			$scope.isSend = false;
+			$scope.send = function() {
+				$scope.isSend = true;
+			}
+		});
+	</script>
 
 	<script type="text/javascript">
+
 		function change() {
 			document.getElementsByClassName("navbar")[0].style.background = "white";
 		}
