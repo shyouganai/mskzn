@@ -16,9 +16,8 @@ header {
 	height: 66px;
 	background: rgba(255,255,255,0.8);
 }
-
-.navbar {
-	background: rgba(255,255,255,0.8);
+header:hover {
+	background: rgba(255,255,255,0.9);
 }
 
 #content {
